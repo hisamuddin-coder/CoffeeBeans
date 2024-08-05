@@ -1,0 +1,15 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$primary-color: rgb(96, 56, 9);
+$secondary-color: #b07129;
+$accent-color: rgb(249, 192, 106);
+$background-color: #ffeed8;
+$text-color-primary: rgb(30, 30, 30);
+$text-color-secondary: #707070;
+$white-color: rgb(255, 255, 255);

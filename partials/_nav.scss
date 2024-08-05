@@ -1,0 +1,124 @@
+nav {
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      color: $primary-color;
+      font-size: 35px;
+      font-family: "Clicker Script", cursive;
+      font-weight: normal;
+    }
+
+    .nav-link-container {
+      .btn-close {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+
+        .nav-link {
+          color: $primary-color;
+          font-size: 14px;
+          font-weight: medium;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 2.5px;
+
+          i {
+            color: $accent-color;
+          }
+        }
+      }
+    }
+
+    .btn-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .sign-in {
+        color: $primary-color;
+        font-size: 14px;
+        font-weight: medium;
+      }
+
+      .btn {
+        color: $text-color-primary;
+        background-color: $accent-color;
+        font-size: 0.875rem;
+        font-weight: 600;
+        padding: 1em 2em;
+        border-radius: 2em;
+        font-family: "Playfair Display", serif;
+        border: none;
+        outline: none;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+    }
+  }
+}
+
+// ====== Media Query ==========
+@media screen and (max-width: 992px) {
+  nav {
+    .nav-link-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: $secondary-color;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+
+        .nav-link i {
+          color: $accent-color;
+        }
+      }
+
+      .btn-close {
+        display: block;
+        color: $white-color;
+        border: none;
+        outline: none;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        background: transparent;
+        font-size: 2rem;
+      }
+    }
+
+    .nav-toggle {
+      display: block;
+      color: $white-color;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 2rem;
+    }
+  }
+}
