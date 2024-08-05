@@ -1,0 +1,28 @@
+@mixin button(
+  $textColor: $text-color-primary,
+  $backgroundColor: $accent-color
+) {
+  display: inline-block;
+  color: $textColor;
+  background-color: $backgroundColor;
+  font-size: 0.875rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  padding: 1em 2em;
+  border-radius: 2em;
+  cursor: pointer;
+  box-shadow: 0 0 10px 2px rgba($color: $accent-color, $alpha: 0.3);
+  transition: all 400ms ease;
+
+  &:hover {
+    background-color: lighten($backgroundColor, 8%);
+  }
+}
+
+@mixin gradientBackground {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}

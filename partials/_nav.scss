@@ -1,73 +1,58 @@
 nav {
-  padding: 1rem 0;
   position: fixed;
   width: 100%;
+  padding: 1rem 0;
   z-index: 9;
 
   .container {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
 
     .logo {
-      color: $primary-color;
+      color: $white-color;
       font-size: 35px;
       font-family: "Clicker Script", cursive;
       font-weight: normal;
     }
 
     .nav-link-container {
-      .btn-close {
+      .btn-nav-close {
         display: none;
       }
 
       ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         gap: 3rem;
 
         .nav-link {
-          color: $primary-color;
+          color: $white-color;
           font-size: 14px;
           font-weight: medium;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           gap: 2.5px;
-
           i {
             color: $accent-color;
+            transition: all 400ms ease;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+          &:hover i {
+            transform: rotate(720deg);
           }
         }
       }
     }
 
     .btn-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       gap: 1rem;
 
       .sign-in {
-        color: $primary-color;
+        color: $white-color;
         font-size: 14px;
         font-weight: medium;
+        &:hover {
+          color: rgba($color: $white-color, $alpha: 0.8);
+        }
       }
-
-      .btn {
-        color: $text-color-primary;
-        background-color: $accent-color;
-        font-size: 0.875rem;
-        font-weight: 600;
-        padding: 1em 2em;
-        border-radius: 2em;
-        font-family: "Playfair Display", serif;
-        border: none;
-        outline: none;
-      }
-
-      .nav-toggle {
+      .btn-nav-open {
         display: none;
       }
     }
@@ -77,48 +62,63 @@ nav {
 // ====== Media Query ==========
 @media screen and (max-width: 992px) {
   nav {
-    .nav-link-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: $secondary-color;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .container {
+      .nav-link-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: $secondary-color;
+        transform: translateX(-100%);
+        transition: 400ms ease;
 
-      ul {
-        flex-direction: column;
-        align-items: center;
-        list-style: none;
+        ul {
+          flex-direction: column;
+          align-items: center;
+          .nav-link {
+            opacity: 0;
+            transition: all 400ms ease 200ms;
+            .nav-link i {
+              color: $accent-color;
+            }
+          }
+          .nav-link.active {
+            opacity: 1;
+          }
+        }
 
-        .nav-link i {
-          color: $accent-color;
+        .btn-nav-close {
+          display: block;
+          color: $white-color;
+          position: absolute;
+          top: 1.5rem;
+          right: 1.5rem;
+          font-size: 2rem;
         }
       }
-
-      .btn-close {
-        display: block;
-        color: $white-color;
-        border: none;
-        outline: none;
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
-        background: transparent;
-        font-size: 2rem;
+      .nav-link-container.active {
+        transform: translateX(0);
+      }
+      .btn-container {
+        .btn-nav-open {
+          display: block;
+          color: $white-color;
+          font-size: 2rem;
+        }
       }
     }
-
-    .nav-toggle {
-      display: block;
-      color: $white-color;
-      border: none;
-      outline: none;
-      background: transparent;
-      font-size: 2rem;
+  }
+}
+@media screen and (max-width: 548px) {
+  nav {
+    .container {
+      .btn-container {
+        .sign-in,
+        .btn {
+          display: none;
+        }
+      }
     }
   }
 }
