@@ -9,7 +9,7 @@ body {
   background-color: $background-color;
 }
 img {
-  display: block;
+  // display: block;
   width: 100%;
 }
 ul {
@@ -29,17 +29,39 @@ p {
   line-height: 1.6;
   margin-bottom: 1rem;
 }
+h2 {
+  color: $text-color-primary;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
 /////////////////////////// GENERAL STYLE
 .btn {
   @include button;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 .section-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.container {
-  width: 90%;
-  max-width: 1200px;
+.section-pd {
+  padding: 5rem 0;
+}
+
+.section-header {
+  width: 80%;
+  text-align: center;
   margin: auto;
+  margin-bottom: 3.15rem;
+  > span {
+    @include subTitle;
+  }
+
+  h2 {
+    margin-bottom: 0.625rem;
+  }
 }

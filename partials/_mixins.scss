@@ -18,7 +18,13 @@
     background-color: lighten($backgroundColor, 8%);
   }
 }
-
+@mixin subTitle($textColor: $primary-color, $fz: "14px", $mb: "") {
+  color: $primary-color;
+  font-size: $fz;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: $mb;
+}
 @mixin gradientBackground {
   background: linear-gradient(
     180deg,
