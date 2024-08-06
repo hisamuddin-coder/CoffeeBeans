@@ -48,12 +48,63 @@ const menuItems = [
     category: "coffee",
   },
 ];
+const stores = [
+  {
+    id: 1,
+    name: "MOI Noida",
+    address: "lodfdfd fdsfd sdfds fdsfdsf ",
+    phone: "993 3323 0002 32",
+  },
+  {
+    id: 2,
+    name: "Ambience Mall, Vasant Kunj",
+    address: "lodfdfd fdsfd sdfds fdsfdsf ",
+    phone: "993 3323 0002 32",
+  },
+  {
+    id: 3,
+    name: "Pecific Mall",
+    address: "lodfdfd fdsfd sdfds fdsfdsf ",
+    phone: "993 3323 0002 32",
+  },
+  {
+    id: 4,
+    name: "Canaught Place",
+    address: "lodfdfd fdsfd sdfds fdsfdsf ",
+    phone: "993 3323 0002 32",
+  },
+  {
+    id: 5,
+    name: "Lulu mall",
+    address: "lodfdfd fdsfd sdfds fdsfdsf ",
+    phone: "993 3323 0002 32",
+  },
+  {
+    id: 6,
+    name: "Phonix mall",
+    address: "lodfdfd fdsfd sdfds fdsfdsf ",
+    phone: "993 3323 0002 32",
+  },
+  {
+    id: 7,
+    name: "Mall of gujrat",
+    address: "lodfdfd fdsfd sdfds fdsfdsf ",
+    phone: "993 3323 0002 32",
+  },
+  {
+    id: 8,
+    name: "dubai mall",
+    address: "lodfdfd fdsfd sdfds fdsfdsf ",
+    phone: "993 3323 0002 32",
+  },
+];
 
 const btnNavOpen = document.querySelector(".btn-nav-open");
 const btnNavClose = document.querySelector(".btn-nav-close");
 const navContainer = document.querySelector(".nav-link-container");
 const links = document.querySelectorAll(".nav-link");
 const itemsContainer = document.querySelector(".menu-items");
+const storeContainer = document.querySelector(".boxes");
 
 // NAVBAR
 btnNavOpen.addEventListener("click", () => {
@@ -72,6 +123,7 @@ btnNavClose.addEventListener("click", () => {
 // Menu
 document.addEventListener("DOMContentLoaded", () => {
   displayMenuItems(menuItems);
+  displayStoreBoxes(stores);
 });
 
 function displayMenuItems(items) {
@@ -93,4 +145,16 @@ function displayMenuItems(items) {
             </figure>`;
   });
   itemsContainer.innerHTML = displayMenu.join("");
+}
+// stores
+function displayStoreBoxes(boxes) {
+  let displayStoreBox = boxes.map((box) => {
+    return `<div class="box">
+                <h5>${box.name}</h5>
+                <address>${box.address}</address>
+                <span class="phone-no">+${box.phone}</span>
+              </div>`;
+  });
+
+  storeContainer.innerHTML = displayStoreBox.join("");
 }

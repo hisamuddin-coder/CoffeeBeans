@@ -1,0 +1,46 @@
+#contacts {
+  background-color: #fff;
+  .section-center {
+    flex-direction: column;
+    gap: 3rem;
+    .boxes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      .box {
+        h5 {
+          color: $text-color-secondary;
+          font-size: 1rem;
+          font-weight: 400;
+          text-transform: uppercase;
+          text-decoration: underline;
+          margin-bottom: 10px;
+        }
+        address {
+          color: $text-color-secondary;
+          font-size: 14px;
+        }
+        .phone-no {
+          color: $text-color-secondary;
+        }
+      }
+    }
+    .col {
+      width: 100%;
+
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #contacts {
+    .section-center {
+      .boxes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
